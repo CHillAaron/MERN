@@ -1,0 +1,58 @@
+(base) ArdyGs-MacBook-Pro:~ ardyg$ npm install
+
+> weak@1.0.1 install /Users/ardyg/node_modules/weak
+> node-gyp rebuild
+
+No receipt for 'com.apple.pkg.CLTools_Executables' found at '/'.
+
+No receipt for 'com.apple.pkg.DeveloperToolsCLILeo' found at '/'.
+
+No receipt for 'com.apple.pkg.DeveloperToolsCLI' found at '/'.
+
+gyp: No Xcode or CLT version detected!
+gyp ERR! configure error 
+gyp ERR! stack Error: `gyp` failed with exit code: 1
+gyp ERR! stack     at ChildProcess.onCpExit (/usr/local/lib/node_modules/npm/node_modules/node-gyp/lib/configure.js:351:16)
+gyp ERR! stack     at ChildProcess.emit (events.js:315:20)
+gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:277:12)
+gyp ERR! System Darwin 18.7.0
+gyp ERR! command "/usr/local/bin/node" "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /Users/ardyg/node_modules/weak
+gyp ERR! node -v v14.15.4
+gyp ERR! node-gyp -v v5.1.0
+gyp ERR! not ok 
+
+> phantomjs@1.9.20 install /Users/ardyg/node_modules/phantomjs
+> node install.js
+
+PhantomJS not found on PATH
+Download already available at /var/folders/4z/7cgfh_y52m9gwl8x_3_tspdc0000gn/T/phantomjs/phantomjs-1.9.8-macosx.zip
+Verified checksum of previously downloaded file
+Extracting zip contents
+Removing /Users/ardyg/node_modules/phantomjs/lib/phantom
+Copying extracted folder /var/folders/4z/7cgfh_y52m9gwl8x_3_tspdc0000gn/T/phantomjs/phantomjs-1.9.8-macosx.zip-extract-1610135111327/phantomjs-1.9.8-macosx -> /Users/ardyg/node_modules/phantomjs/lib/phantom
+Writing location.js file
+Done. Phantomjs binary available at /Users/ardyg/node_modules/phantomjs/lib/phantom/bin/phantomjs
+
+> node-plantuml@git+https://github.com/vowstar/node-plantuml.git#ebc2943f773ef6d6563dd92fe33899537216c27f postinstall /Users/ardyg/node_modules/node-plantuml
+> npm run getpuml && node scripts/get-vizjs.js
+
+
+> node-plantuml@1.0.4 getpuml /Users/ardyg/node_modules/node-plantuml
+> node scripts/get-plantuml-jar.js
+
+Downloading plantuml.jar version 1.2020.20
+graphviz was found on the system. Skipping download of vizjs.
+npm WARN ardyg@1.0.0 No description
+npm WARN ardyg@1.0.0 No repository field.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: weak@1.0.1 (node_modules/weak):
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: weak@1.0.1 install: `node-gyp rebuild`
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: Exit status 1
+
+added 914 packages from 1129 contributors and audited 918 packages in 11.676s
+
+18 packages are looking for funding
+  run `npm fund` for details
+
+found 144 vulnerabilities (44 low, 58 moderate, 42 high)
+  run `npm audit fix` to fix them, or `npm audit` for details

@@ -1,0 +1,12 @@
+.boxHolder{
+    margin-top: 20px;
+    display:flex;   
+    justify-content: center;
+    flex-direction: row;
+}
+
+.boxCreater{
+    border: 2px solid black;
+    width: 100px;
+    height: 100px;   
+}
