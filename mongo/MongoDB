@@ -1,0 +1,9 @@
+use my_first_db
+db.createCollection("students")
+db.shows.insert({"name" : "Johnny","home_state" : "California", "lucky_number" : 5, "birthday" : {"month" : 2, "day" : 12, "year" : 1995 }})
+db.students.insert({"name" : "Billy","home_state" : "Florida","lucky_number" : 8,"birthday" : {"month" : 1,"day" : 12,"year" : 1993}})        
+db.students.insert({"name" : "William","home_state" : "Washington","lucky_number" : 13,"birthday" : {"month" : 8,"day" : 16,"year" : 1999}})
+db.students.insert({"name" : "Nikki","home_state" : "California","lucky_number" : 1,"birthday" : {"month" : 5,"day" : 17,"year" : 1991}})
+db.students.insert({"name" : "Marco","home_state" : "Georgia","lucky_number" : 31,"birthday" : {"month" : 10,"day" : 31,"year" : 1990}})
+db.my_first_db.find().pretty()
+db.students.find({home_state:"California"})

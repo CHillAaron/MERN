@@ -1,0 +1,88 @@
+> use tvShows
+
+> db.createCollection("shows")
+
+
+db.shows.insert({name:"South Park", runTime: 30, release_date: {month:1,
+             day:15,
+             year:2001
+             }
+}
+)
+db.shows.insert({name:"Flash", runTime: 30, release_date: {month:12,
+             day:20,
+             year:2020
+             }
+}
+)
+
+db.shows.insert({name:"60 minutes", runTime: 60, release_date: {month:12,
+             day:20,
+             year:1990
+             }
+}
+)
+
+db.shows.insert({name:"Breaking Bad", runTime: 90, release_date: {month:5,
+             day:20,
+             year:2010
+             }
+}
+)
+db.shows.insert({name:"Breaking Bad", runtime: 90, rating: 5, release_date: {month:5,
+             day:20,
+             year:2010
+             }
+}
+)
+
+db.shows.insert({name:"X", runtime: 90, rating: 5, release_date: {month:5,
+             day:20,
+             year:2010
+             }
+}
+)
+
+db.shows.find( { qty: { $lt: 20 } } )
+db.shows.find( {runTime:{$gt:30} } )
+
+db.shows.find( { runTime: { $eq: 30 } } )
+db.shows.find( { "release_date.year": { $gte: 2000 } } )
+
+//find shows whose runtime is between 30 to 60 minutes long
+
+db.shows.find({runTime: {$gte: 30, $lte:60}}).pretty()
+
+//update 
+db.shows.update({name: "Flash"}, {$set: {location: "Mountain View"}})
+db.shows.update({name:"Flash"},{$set:{runTime: 45}})
+
+db.shows.update({name:"X"},{$set:{runtime: 20}},{multi:true})
+
+db.shows.update({name:"X"},{$set:{runtime: 20}},
+   {multi: true}
+)
+
+//add a field to each show called rating
+
+db.shows.update({},
+                          {$set : {"rating":5}},
+                          {multi:true}) 
+
+
+
+Add a field to each show collection called 'actors' that is an ARRAY. It should contain the following entries: 'vin diesel', 'jessica alba', 'paul walker'. Do this in ONE operation.
+
+
+db.shows.update({},
+                          {$set : {"actors":["vin diesel", "jessica alba", "paul walker"]}},
+                          {multi:true}) 
+
+
+//Add some unique actors for each particular show into each of their actors arrays.
+db.students.update({_id: ObjectId("5463d871a6a96d5ed6252f4d")}, {$push: {interests: 'snowboarding'}})
+db.shows.update({_id:ObjectId("60070fc939a7c73f44f5b539")}, {$push: {actors:"Malcolms dad"}} )
+
+
+//remove jessica alba from the actors array for the tv show 60 minutes
+db.shows.update({_id:ObjectId("60070fc939a7c73f44f5b539")}, {$pop: {actors: (1)}})
