@@ -1,7 +1,9 @@
 import './App.css';
 import Form from './components/form'
 import Main from "./components/main"
+import ProductInfo from "./components/ProductInfo"
 import { Router, Link } from "@reach/router";
+
 import 'bootstrap/dist/css/bootstrap.min.css'; //add this line for bootstrap
 
 function App() {
@@ -13,6 +15,7 @@ function App() {
       <Router>
         <Main path="/" />
         <Form path="/new" />
+        <ProductInfo path="/product/:id" />
       </Router>
       
     </div>

@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Axios from 'axios';
+import { Link } from "@reach/router";
 
 
 const Main = () => {
@@ -29,9 +30,9 @@ const Main = () => {
                         allproducts.map((product, i)=>{
                             return <tr key = {i}>
                                 <td>{product.title}</td>
-                                <td>{product.price.$numberDecimal}</td> 
+                                <td>{product.price}</td> 
                                 <td>{product.description}</td>
-                                <td>placeholder for link</td>
+                                <td><Link className="btn btn-info" to={`/product/${product._id}`}>View</Link></td>
                             </tr>
                         })
                     }

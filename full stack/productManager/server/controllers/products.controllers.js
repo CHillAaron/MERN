@@ -15,3 +15,10 @@ module.exports.createProduct =(req,res)=> {
         .then(newProduct => res.json({results:newProduct}))
         .catch(err => res.json({error:err}))
 }
+
+module.exports.findOneProduct= (req,res)=>{
+    console.log('Product id to find', req.params.id)
+    Product.findOne({_id: req.params.id})
+        .then(selectedProduct => res.json({results: selectedProduct}))
+        .catch(err=> res.json({error: err}))
+}
