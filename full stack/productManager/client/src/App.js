@@ -1,6 +1,7 @@
 import './App.css';
 import Form from './components/form'
 import Main from "./components/main"
+import Update from "./components/update"
 import ProductInfo from "./components/ProductInfo"
 import { Router, Link } from "@reach/router";
 
@@ -16,6 +17,8 @@ function App() {
         <Main path="/" />
         <Form path="/new" />
         <ProductInfo path="/product/:id" />
+        <Update path="/product/update/:id" />
+        {/* <ProductInfo path="/product/:id" /> */}
       </Router>
       
     </div>

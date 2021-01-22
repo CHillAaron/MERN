@@ -1,5 +1,6 @@
 import React,  {useState} from 'react';
 import Axios from 'axios';
+import { navigate } from '@reach/router';
 
 const Form =() =>{
     const [productInfo, setproductInfo] = useState({
@@ -19,7 +20,9 @@ const Form =() =>{
         e.preventDefault();
         console.log("Submitting the Product", productInfo)
         Axios.post("http://localhost:8000/api/products/create", productInfo)
-            .then(res=>console.log("Response after submitting the axios post request",res))
+            .then(res=>{console.log("Response after submitting the axios post request",res)
+            navigate("/")
+            })
             .catch(err=>console.log("This is the errors:",err))
 
     }
