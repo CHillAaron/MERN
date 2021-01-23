@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import { Router} from "@reach/router";
 import Form from './components/form'
-import People from './components/people'
+import Display from './components/display'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -19,7 +19,7 @@ function App() {
       
       <Router>
         {/* <Film path="films"/> */}
-        <People path="/starwars/:category/:id" />
+        <Display path="/starwars/:category/:id" />
       </Router>
     </div> 
   );

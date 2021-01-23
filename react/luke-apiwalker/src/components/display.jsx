@@ -3,7 +3,7 @@ import axios from 'axios';
 
 
 
-const People = (props) => {
+const Display = (props) => {
     const [Guide, setGuide] = useState ({})
 
     useEffect(()=>{
@@ -29,4 +29,4 @@ const People = (props) => {
     );
 };
 
-export default People;
+export default Display;
