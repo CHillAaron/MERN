@@ -43,7 +43,6 @@ const People = (props) => {
             <p>Name: {Guide.name}</p>
             <p>Eye Color: {Guide.eye_color}</p>
             <p>Gender: {Guide.gender}</p>
-            {/* <p>Homeworld: <Link to={`/${Guide.homeworld}`}>{Planet.name}</Link></p> */}
             <p>Homeworld: <Link to={`/starwars/planets/${Homeworldlink}`}>{Planet.name}</Link></p>
             
 
