@@ -32,10 +32,6 @@ const People = (props) => {
     .catch(err=> console.log(err))
 }
 
-// if (category.toLowerCase() === "people") {
-//     setHomeWorldId(response.data.homeworld.slice(29).slice(0,-1));
-// }
-
 
     return (
         <div>
