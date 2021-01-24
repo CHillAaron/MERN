@@ -69,7 +69,6 @@ const Form = () => {
                         <h3 className="mx-2">ID:</h3>
                         <input type="number" className="form-control form-control-sm width: 50px;margin: 2px;" onChange={handleChangeId} value="1"/>
                     </div>
-                    {/* <button className="btn btn-primary mx-2" type="submit">Search</button> */}
                     <input type="submit" className="btn btn-primary mx-2" value="Search" onClick={submitHandler}/>
                 </form>
             </div>
