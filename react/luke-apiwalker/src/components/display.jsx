@@ -9,7 +9,11 @@ const Display = (props) => {
     useEffect(()=>{
     axios.get(`http://swapi.dev/api/${props.category}/${props.id}`)
         .then(response =>{ console.log(response)
-        setGuide(response.data)
+            axios.get(`http://swapi.dev/api/planets/${props.id.homeworld}`)
+            .then(res => {console.log(res)
+            setGuide(res.data)
+        })
+        
         })
         .catch(err=> console.log(err))
     },[props])

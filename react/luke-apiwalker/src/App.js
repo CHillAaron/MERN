@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useState} from 'react';
+import React from 'react';
 import { Router} from "@reach/router";
 import Form from './components/form'
 import People from './components/people'

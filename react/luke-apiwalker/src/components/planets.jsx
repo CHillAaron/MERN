@@ -4,22 +4,22 @@ import axios from 'axios';
 
 
 const Planet = (props) => {
-    const [Guide, setGuide] = useState ({})
+    const [Planet, setPlanet] = useState ({})
 
     useEffect(()=>{
     axios.get(`http://swapi.dev/api/planets/${props.id}`)
         .then(response =>{ console.log(response)
-        setGuide(response.data)
+        setPlanet(response.data)
         })
         .catch(err=> console.log(err))
     },[props])
 
     return (
         <div>
-            <p>Planet: {Guide.name}</p>
-            {/* <p>{Guide.planets}</p> */}
-            <p>Population: {Guide.population}</p>
-            <p>Climate: {Guide.climate}</p> 
+            <p>Planet: {Planet.name}</p>
+            {/* <p>{Planet.planets}</p> */}
+            <p>Population: {Planet.population}</p>
+            <p>Climate: {Planet.climate}</p> 
         </div>
     );
 };

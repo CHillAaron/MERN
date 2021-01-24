@@ -67,7 +67,7 @@ const Form = () => {
 
                     <div className="d-flex mx-2">
                         <h3 className="mx-2">ID:</h3>
-                        <input type="number" className="form-control form-control-sm width: 50px;margin: 2px;" onChange={handleChangeId} value="1"/>
+                        <input type="number" className="form-control form-control-sm width: 50px;margin: 2px;" onChange={handleChangeId} />
                     </div>
                     <input type="submit" className="btn btn-primary mx-2" value="Search" onClick={submitHandler}/>
                 </form>
