@@ -17,9 +17,10 @@ const Display = (props) => {
     return (
         <div>
 
-            <p>{Guide.name}</p>
-            <p>{Guide.eye_color}</p>
-            <p>{Guide.gender}</p>
+            <p>Name: {Guide.name}</p>
+            <p>Eye Color: {Guide.eye_color}</p>
+            <p>Gender: {Guide.gender}</p>
+            <p>species: {Guide.species}</p>
             <p>{Guide.title}</p>
             {/* <p>{Guide.planets}</p> */}
             <p>{Guide.producers}</p>

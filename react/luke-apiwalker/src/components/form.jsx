@@ -4,7 +4,7 @@ import {navigate} from "@reach/router";
 const Form = () => {
     const[starwarsInfo, setstarwarsInfo] = useState({
         id:1,
-        category:""
+        category:"people"
     })
     const handleChangeSelect = e => {
         // console.log(e.target.value)
@@ -52,7 +52,7 @@ const Form = () => {
             
             <div className="jumbotron">
 
-                <form className="d-flex justify-content-center align-items-center" onSubmit={submitHandler} >
+                <form className="d-flex justify-content-center align-items-center">
                     <div className="d-flex">
                         <h3>Search for:</h3>
                         <select className="mx-2" onChange={handleChangeSelect}>
@@ -60,17 +60,17 @@ const Form = () => {
                             <option value="films">Films</option>
                             <option value="planets">Planets</option>
                             <option value="species">Species</option>
-                            <option value="Vehicles">Vehicles</option>
+                            <option value="vehicles">Vehicles</option>
                             <option value="starships">StarShips</option>
                         </select>
                     </div>
 
                     <div className="d-flex mx-2">
                         <h3 className="mx-2">ID:</h3>
-                        <input type="number" className="form-control form-control-sm width: 50px;margin: 2px;" onChange={handleChangeId} />
+                        <input type="number" className="form-control form-control-sm width: 50px;margin: 2px;" onChange={handleChangeId} value="1"/>
                     </div>
                     {/* <button className="btn btn-primary mx-2" type="submit">Search</button> */}
-                    <input type="submit" className="btn btn-primary mx-2" value="Search"/>
+                    <input type="submit" className="btn btn-primary mx-2" value="Search" onClick={submitHandler}/>
                 </form>
             </div>
         </div>

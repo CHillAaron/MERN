@@ -3,11 +3,11 @@ import axios from 'axios';
 
 
 
-const Film = (props) => {
+const Planet = (props) => {
     const [Guide, setGuide] = useState ({})
 
     useEffect(()=>{
-    axios.get(`http://swapi.dev/api/films/${props.id}`)
+    axios.get(`http://swapi.dev/api/planets/${props.id}`)
         .then(response =>{ console.log(response)
         setGuide(response.data)
         })
@@ -16,13 +16,12 @@ const Film = (props) => {
 
     return (
         <div>
-            <p>Title: {Guide.title}</p>
-            <p>Producer(s) {Guide.producer}</p>
-            <p>Episode Number: {Guide.episode_id}</p> 
-            <p>{Guide.opening_crawl}</p>
-            
+            <p>Planet: {Guide.name}</p>
+            {/* <p>{Guide.planets}</p> */}
+            <p>Population: {Guide.population}</p>
+            <p>Climate: {Guide.climate}</p> 
         </div>
     );
 };
 
-export default Film;
+export default Planet;

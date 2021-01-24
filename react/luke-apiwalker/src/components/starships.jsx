@@ -3,11 +3,11 @@ import axios from 'axios';
 
 
 
-const Film = (props) => {
+const Starship = (props) => {
     const [Guide, setGuide] = useState ({})
 
     useEffect(()=>{
-    axios.get(`http://swapi.dev/api/films/${props.id}`)
+    axios.get(`http://swapi.dev/api/starships/${props.id}`)
         .then(response =>{ console.log(response)
         setGuide(response.data)
         })
@@ -16,13 +16,13 @@ const Film = (props) => {
 
     return (
         <div>
-            <p>Title: {Guide.title}</p>
-            <p>Producer(s) {Guide.producer}</p>
-            <p>Episode Number: {Guide.episode_id}</p> 
-            <p>{Guide.opening_crawl}</p>
-            
+            <p>Ship Name: {Guide.name}</p>
+            {/* <p>{Guide.planets}</p> */}
+            <p>Model: {Guide.model}</p>
+            <p>Crew: {Guide.crew}</p> 
+            <p>Manufacturer: {Guide.manufacturer}</p>
         </div>
     );
 };
 
-export default Film;
+export default Starship;
