@@ -6,10 +6,6 @@ import { Link} from "@reach/router";
 
 const People = (props) => {
 
-    // const [firstResponse, secondResponse] = await Promise.all([
-    //     axios.get(`https://maps.googleapis.com/maps/api/geocode/json?&address=${this.props.p1}`),
-    //     axios.get(`https://maps.googleapis.com/maps/api/geocode/json?&address=${this.props.p2}`)
-    //   ]);
     const [Guide, setGuide] = useState ({})
     const [Planet, setPlanet] = useState({})
     const [Homeworldlink, setHomeworldlink] = useState({})
