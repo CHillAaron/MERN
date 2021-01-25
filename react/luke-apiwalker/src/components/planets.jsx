@@ -1,5 +1,7 @@
 import React , {useState, useEffect} from 'react';
 import axios from 'axios';
+import Item from './items'
+import { Link } from '@reach/router';
 
 
 
@@ -23,51 +25,36 @@ const Planet = (props) => {
         return (res)
         
     }
-    // setMovieLink(response.data.films.slice(29).slice(0,-1))
     useEffect(()=>{
         const f = async () =>{
             
             let planet = await slowTimeDown(id)
             console.log("this is the variable of planet", planet)
-            await Moviefunction(planet.films)
+            // await Moviefunction(planet.films)
+            setMovies(planet.films)
             setPlanet(planet)
             setfilmsPopulated(!filmsPopulated)
+            // setMovieLink(Planet.films.slice(29).slice(0,-1))
         }
         f()
         },[id])
 
-    const Moviefunction = async (movie) =>{
-        // console.log('This is the Movie function',movie)
-        let NewArr = []
-        movie.forEach(element => {
-            console.log("this is the element",element)
-            axios.get(element)
-            .then(response =>{ 
-            NewArr.push({film: response.data.title})
-            // console.log('Here is the movie axios',response.data.title)
+//     const Moviefunction = async (movie) =>{
+//         // console.log('This is the Movie function',movie)
+//         let NewArr = []
+//         movie.forEach(element => {
+//             console.log("this is the element",element)
+//             axios.get(element)
+//             .then(response =>{ 
+//             NewArr.push({film: response.data.title})
+//             // console.log('Here is the movie axios',response.data.title)
             
-        })
-        // console.log(NewArr)
-        .catch(err=> console.log(err))
-    })
-    setMovies(NewArr)
-}
-
-        const filmsMessage = () => {
-            if( filmsPopulated ) {
-                console.log("this is the movies for filmsMessage",Movies)
-            return (
-
-                Movies.map((film, i) => {
-                    return <li key = {i}>{film.film}</li>
-                }) 
-                    
-            )
-                ;
-        } else {
-            return "This planet Did not show up in a Movie";
-        }
-        };
+//         })
+//         // console.log(NewArr)
+//         .catch(err=> console.log(err))
+//     })
+//     setMovies(NewArr)
+// }
 
 
         return (
@@ -76,12 +63,18 @@ const Planet = (props) => {
                     <p>{Planet.planets}</p>
                     <p>Population: {Planet.population}</p>
                     <p>Climate: {Planet.climate}</p> 
-                    <p>Films that That {Planet.name} was part of: <br/>{Movies}</p>
                     <p>Films that That {Planet.name} was part of: </p>
-                    <ul>{filmsMessage()}</ul>
+                    <ul> {
+                    Movies.map((film, i) => {
+                         return <li key = {i}><Item url={film}/></li>
+                         
+                        })
+                    }
+                    </ul>
                     
             </div>
             );    
+            // {film.film}
 };
 
 export default Planet;
