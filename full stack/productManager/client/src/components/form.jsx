@@ -16,7 +16,7 @@ const Form =() =>{
             [e.target.name]: e.target.value
         })
     }
-    const submitHandler=e=>{
+    const createHandler=e=>{
         e.preventDefault();
         console.log("Submitting the Product", productInfo)
         Axios.post("http://localhost:8000/api/products/create", productInfo)
@@ -30,7 +30,7 @@ const Form =() =>{
 
     return (
         <>
-            <form onSubmit={submitHandler}>
+            <form>
                 <div>
                     <label htmlFor="">Title</label>
                     <input type="text" name="title" onChange={changeHandler}/>
@@ -43,7 +43,7 @@ const Form =() =>{
                     <label htmlFor="">Description</label>
                     <input type="text" name="description" onChange={changeHandler}/>
                 </div>
-                <input type="submit" value="Create"/>
+                <input type="submit" value="Create" onClick={createHandler}/>
             </form>
         </>
     )

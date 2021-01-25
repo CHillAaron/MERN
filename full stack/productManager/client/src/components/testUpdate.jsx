@@ -1,50 +1,52 @@
-import React,  {useState, useEffect} from 'react';
+import React,  {useState} from 'react';
 import Axios from 'axios';
 import { navigate } from '@reach/router';
-import Form from '../components/form'
 
-
-const Update = (props) => {
+const Form =() =>{
     const [productInfo, setproductInfo] = useState({
         title: "",
         price: 0,
         description:""
     })
 
-    useEffect(()=>{
-        Axios.get(`http://localhost:8000/api/products/${props.id}`)
-        .then(res=> {
-            console.log("got the response back to update one Product", res)
-            setproductInfo(res.data.results)
-        })
-        .catch(err=>console.log("error", err))
-    },[])
-
     const changeHandler = (e)=> {
-        console.log("Updating a product?", e.target.name)
+        console.log("Making a new product?", e.target.name)
         setproductInfo({
             ...productInfo,
             [e.target.name]: e.target.value
         })
     }
-
-    const submitHandler=e=>{
+    const createHandler=e=>{
         e.preventDefault();
-        
-        console.log("updating this Product:", productInfo)
-        Axios.put(`http://localhost:8000/api/products/update/${productInfo._id}`, productInfo)
+        console.log("Submitting the Product", productInfo)
+        Axios.post("http://localhost:8000/api/products/create", productInfo)
             .then(res=>{console.log("Response after submitting the axios post request",res)
-            navigate('/')
+            navigate("/")
             })
             .catch(err=>console.log("This is the errors:",err))
 
     }
+
+
     return (
-        <div>
-            <Form />
-        </div>
-    );
-};
+        <>
+            <form onSubmit={createHandler}>
+                <div>
+                    <label htmlFor="">Title</label>
+                    <input type="text" name="title" onChange={changeHandler}/>
+                </div>
+                <div>
+                    <label htmlFor="">Price</label>
+                    <input type="number" name="price" onChange={changeHandler}/>
+                </div>
+                <div>
+                    <label htmlFor="">Description</label>
+                    <input type="text" name="description" onChange={changeHandler}/>
+                </div>
+                <input type="submit" value="Create" onOnclick={createHandler}/>
+            </form>
+        </>
+    )
+}
 
-
-export default Update;
+export default Form
