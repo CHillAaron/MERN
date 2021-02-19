@@ -14,8 +14,8 @@ function App() {
       <Link to="/new" className="btn btn-primary m-1"> Add a new Product</Link>
       <Link to="/" className="btn btn-secondary m-1"> Home</Link>
       <Router>
-        <Main path="/" />
-        <Form path="/new" />
+        <Main path="/"/>
+        <Form path="/new"/>
         <ProductInfo path="/product/:id" />
         <Update path="/product/update/:id" />
         {/* <ProductInfo path="/product/:id" /> */}
